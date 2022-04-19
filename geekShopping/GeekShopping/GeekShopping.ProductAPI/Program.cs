@@ -20,6 +20,8 @@ IMapper mapper = MappingConfig.RegisterMaps().CreateMapper();
 builder.Services.AddSingleton(mapper);
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
+
+
 //Configuracao repositorios
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 
