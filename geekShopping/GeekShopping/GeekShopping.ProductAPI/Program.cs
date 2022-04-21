@@ -38,6 +38,9 @@ if (app.Environment.IsDevelopment()) {
     app.UseSwaggerUI();
 }
 
+//Indicação da aplicação para utilização de HTTPS
+app.UseHttpsRedirection();
+
 app.UseAuthorization();
 
 app.MapControllers();

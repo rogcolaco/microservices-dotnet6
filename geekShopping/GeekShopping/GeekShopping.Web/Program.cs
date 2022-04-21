@@ -15,6 +15,10 @@ var app = builder.Build();
 if (!app.Environment.IsDevelopment()) {
     app.UseExceptionHandler("/Home/Error");
 }
+
+//Indicação da aplicação para utilização de HTTPS
+app.UseHttpsRedirection();
+
 app.UseStaticFiles();
 
 app.UseRouting();
