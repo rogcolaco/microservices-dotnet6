@@ -1,4 +1,5 @@
 ﻿using GeekShopping.Web.Models;
+using GeekShopping.Web.Services.IServices;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -7,13 +8,26 @@ using System.Diagnostics;
 namespace GeekShopping.Web.Controllers {
     public class HomeController : Controller {
         private readonly ILogger<HomeController> _logger;
+        private readonly IProductService _productService;
 
-        public HomeController(ILogger<HomeController> logger) {
+        public HomeController(ILogger<HomeController> logger, IProductService productService) {
             _logger = logger;
+            _productService = productService;
         }
 
-        public IActionResult Index() {
-            return View();
+        public async Task<IActionResult> Index() {
+            //Deixei o token aqui, mas como é uma view que é acessada sem login ele poderia ser omitido
+            //Para o método "FindAllProducts poderia ser passado como paramêtro uma string vazia
+            var token = await HttpContext.GetTokenAsync("access_token");
+            var products = await _productService.FindlAllProducts(token);
+            return View(products);
+        }
+
+        [Authorize]
+        public async Task<IActionResult> Details(int id) {
+            var token = await HttpContext.GetTokenAsync("access_token");
+            var model = await _productService.FindlProductById(id, token);
+            return View(model);
         }
 
         public IActionResult Privacy() {
