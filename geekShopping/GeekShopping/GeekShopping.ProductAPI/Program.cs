@@ -29,7 +29,7 @@ builder.Services.AddControllers();
 
 //Configuração authentication
 builder.Services.AddAuthentication("Bearer")
-    .AddJwtBearer(options => {
+    .AddJwtBearer("Bearer", options => {
         options.Authority = "https://localhost:44335/";
         options.TokenValidationParameters = new TokenValidationParameters {
             ValidateAudience = false
