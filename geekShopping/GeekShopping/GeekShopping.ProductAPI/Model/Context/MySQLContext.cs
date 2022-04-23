@@ -17,7 +17,7 @@ namespace GeekShopping.ProductAPI.Model.Context {
                 Name = "Name 2",
                 Price = 169.9,
                 Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempor tincidunt urna vel pretium. Sed condimentum neque vitae est fringilla, ac molestie neque mattis. Nullam felis urna, viverra vel eleifend non, fermentum quis ex. Nullam turpis velit, dictum vel varius nec, sagittis bibendum neque. Sed pulvinar augue fringilla nisi posuere, sit amet vehicula tortor semper. Aliquam suscipit, magna ac aliquet iaculis, urna leo faucibus justo, eu dapibus est neque nec elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Cras euismod justo vitae massa rhoncus, nec finibus odio lacinia. Sed varius aliquam consectetur. Sed vel gravida risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin quis purus nibh. Donec convallis eget leo eget feugiat.",
-                ImageUrl = "https://www.camisetas4fun.com.br/media/product/7e2/camiseta-one-piece-1c2.jpg",
+                ImageUrl = "https://github.com/rogcolaco/microservices-dotnet6/blob/main/geekShopping/Images/camiseLuffy.png?raw=true",
                 CategoryName = "Vestuário"
             });
             modelBuilder.Entity<Product>().HasData(new Product {
@@ -25,7 +25,7 @@ namespace GeekShopping.ProductAPI.Model.Context {
                 Name = "Name 4",
                 Price = 619.9,
                 Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempor tincidunt urna vel pretium. Sed condimentum neque vitae est fringilla, ac molestie neque mattis. Nullam felis urna, viverra vel eleifend non, fermentum quis ex. Nullam turpis velit, dictum vel varius nec, sagittis bibendum neque. Sed pulvinar augue fringilla nisi posuere, sit amet vehicula tortor semper. Aliquam suscipit, magna ac aliquet iaculis, urna leo faucibus justo, eu dapibus est neque nec elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Cras euismod justo vitae massa rhoncus, nec finibus odio lacinia. Sed varius aliquam consectetur. Sed vel gravida risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin quis purus nibh. Donec convallis eget leo eget feugiat.",
-                ImageUrl = "https://cf.shopee.com.br/file/f2fd18b782a1ab556c35f03f443f58a1",
+                ImageUrl = "https://github.com/rogcolaco/microservices-dotnet6/blob/main/geekShopping/Images/camisetaVilaFolha.png?raw=true",
                 CategoryName = "Vestuário"
             });
             modelBuilder.Entity<Product>().HasData(new Product {
@@ -33,7 +33,7 @@ namespace GeekShopping.ProductAPI.Model.Context {
                 Name = "Name 5",
                 Price = 269.9,
                 Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempor tincidunt urna vel pretium. Sed condimentum neque vitae est fringilla, ac molestie neque mattis. Nullam felis urna, viverra vel eleifend non, fermentum quis ex. Nullam turpis velit, dictum vel varius nec, sagittis bibendum neque. Sed pulvinar augue fringilla nisi posuere, sit amet vehicula tortor semper. Aliquam suscipit, magna ac aliquet iaculis, urna leo faucibus justo, eu dapibus est neque nec elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Cras euismod justo vitae massa rhoncus, nec finibus odio lacinia. Sed varius aliquam consectetur. Sed vel gravida risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin quis purus nibh. Donec convallis eget leo eget feugiat.",
-                ImageUrl = "https://www.camisetas4fun.com.br/media/product/7e2/camiseta-one-piece-1c2.jpg",
+                ImageUrl = "https://github.com/rogcolaco/microservices-dotnet6/blob/main/geekShopping/Images/camisetapoke.png?raw=true",
                 CategoryName = "Papelaria"
             });
             modelBuilder.Entity<Product>().HasData(new Product {
@@ -41,7 +41,7 @@ namespace GeekShopping.ProductAPI.Model.Context {
                 Name = "Name 6",
                 Price = 629.9,
                 Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempor tincidunt urna vel pretium. Sed condimentum neque vitae est fringilla, ac molestie neque mattis. Nullam felis urna, viverra vel eleifend non, fermentum quis ex. Nullam turpis velit, dictum vel varius nec, sagittis bibendum neque. Sed pulvinar augue fringilla nisi posuere, sit amet vehicula tortor semper. Aliquam suscipit, magna ac aliquet iaculis, urna leo faucibus justo, eu dapibus est neque nec elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Cras euismod justo vitae massa rhoncus, nec finibus odio lacinia. Sed varius aliquam consectetur. Sed vel gravida risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin quis purus nibh. Donec convallis eget leo eget feugiat.",
-                ImageUrl = "https://a-static.mlcdn.com.br/618x463/camisa-camiseta-one-piece-monkey-d-luffy-manga-home-custom/diasoutlet/30774fcc058f11ecb5264201ac185013/6e9c651f7666e1b720c9fe0987fc12c0.jpg",
+                ImageUrl = "https://github.com/rogcolaco/microservices-dotnet6/blob/main/geekShopping/Images/figuraAction.png?raw=true",
                 CategoryName = "Vestuário"
             });
             modelBuilder.Entity<Product>().HasData(new Product {
@@ -49,7 +49,7 @@ namespace GeekShopping.ProductAPI.Model.Context {
                 Name = "Name 7",
                 Price = 692.9,
                 Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempor tincidunt urna vel pretium. Sed condimentum neque vitae est fringilla, ac molestie neque mattis. Nullam felis urna, viverra vel eleifend non, fermentum quis ex. Nullam turpis velit, dictum vel varius nec, sagittis bibendum neque. Sed pulvinar augue fringilla nisi posuere, sit amet vehicula tortor semper. Aliquam suscipit, magna ac aliquet iaculis, urna leo faucibus justo, eu dapibus est neque nec elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Cras euismod justo vitae massa rhoncus, nec finibus odio lacinia. Sed varius aliquam consectetur. Sed vel gravida risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin quis purus nibh. Donec convallis eget leo eget feugiat.",
-                ImageUrl = "https://cf.shopee.com.br/file/f2fd18b782a1ab556c35f03f443f58a1",
+                ImageUrl = "https://github.com/rogcolaco/microservices-dotnet6/blob/main/geekShopping/Images/figuraAction2.png?raw=true",
                 CategoryName = "Papelaria"
             });
             modelBuilder.Entity<Product>().HasData(new Product {
@@ -57,7 +57,7 @@ namespace GeekShopping.ProductAPI.Model.Context {
                 Name = "Name 8",
                 Price = 691.9,
                 Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempor tincidunt urna vel pretium. Sed condimentum neque vitae est fringilla, ac molestie neque mattis. Nullam felis urna, viverra vel eleifend non, fermentum quis ex. Nullam turpis velit, dictum vel varius nec, sagittis bibendum neque. Sed pulvinar augue fringilla nisi posuere, sit amet vehicula tortor semper. Aliquam suscipit, magna ac aliquet iaculis, urna leo faucibus justo, eu dapibus est neque nec elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Cras euismod justo vitae massa rhoncus, nec finibus odio lacinia. Sed varius aliquam consectetur. Sed vel gravida risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin quis purus nibh. Donec convallis eget leo eget feugiat.",
-                ImageUrl = "https://www.camisetas4fun.com.br/media/product/7e2/camiseta-one-piece-1c2.jpg",
+                ImageUrl = "https://github.com/rogcolaco/microservices-dotnet6/blob/main/geekShopping/Images/mousePadPikachu.png?raw=true",
                 CategoryName = "Papelaria"
             });
             modelBuilder.Entity<Product>().HasData(new Product {
@@ -65,7 +65,7 @@ namespace GeekShopping.ProductAPI.Model.Context {
                 Name = "Name 9",
                 Price = 619.9,
                 Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempor tincidunt urna vel pretium. Sed condimentum neque vitae est fringilla, ac molestie neque mattis. Nullam felis urna, viverra vel eleifend non, fermentum quis ex. Nullam turpis velit, dictum vel varius nec, sagittis bibendum neque. Sed pulvinar augue fringilla nisi posuere, sit amet vehicula tortor semper. Aliquam suscipit, magna ac aliquet iaculis, urna leo faucibus justo, eu dapibus est neque nec elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Cras euismod justo vitae massa rhoncus, nec finibus odio lacinia. Sed varius aliquam consectetur. Sed vel gravida risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin quis purus nibh. Donec convallis eget leo eget feugiat.",
-                ImageUrl = "https://a-static.mlcdn.com.br/618x463/camisa-camiseta-one-piece-monkey-d-luffy-manga-home-custom/diasoutlet/30774fcc058f11ecb5264201ac185013/6e9c651f7666e1b720c9fe0987fc12c0.jpg",
+                ImageUrl = "https://github.com/rogcolaco/microservices-dotnet6/blob/main/geekShopping/Images/narutoFigureActions.png?raw=true",
                 CategoryName = "Vestuário"
             });
 
