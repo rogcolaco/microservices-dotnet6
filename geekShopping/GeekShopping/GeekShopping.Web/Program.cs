@@ -7,8 +7,10 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-//Injeção do HTTP Client
+//Injeção do HTTP Client ProductAPI
 builder.Services.AddHttpClient<IProductService, ProductService>(httpClient => { httpClient.BaseAddress = new(builder.Configuration["ServiceUrls:ProductAPI"]); });
+//Injeção do HTTP Client CartAPI
+builder.Services.AddHttpClient<ICartService, CartService>(httpClient => { httpClient.BaseAddress = new(builder.Configuration["ServiceUrls:CartAPI"]); });
 
 //Adiciona autenticacao
 builder.Services.AddAuthentication(options => {

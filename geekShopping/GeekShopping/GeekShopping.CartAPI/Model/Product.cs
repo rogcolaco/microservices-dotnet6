@@ -2,10 +2,8 @@
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace GeekShopping.CartAPI.Model {
-
     [Table("product")]
     public class Product {
-
         [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Column("id")]
         public long Id { get; set; }
@@ -17,8 +15,8 @@ namespace GeekShopping.CartAPI.Model {
 
         [Column("price")]
         [Required]
-        [Range(1,10000)]
-        public double Price { get; set; }
+        [Range(1, 10000)]
+        public decimal Price { get; set; }
 
         [Column("description")]
         [StringLength(500)]
@@ -30,6 +28,6 @@ namespace GeekShopping.CartAPI.Model {
 
         [Column("image_url")]
         [StringLength(300)]
-        public string ImageUrl { get; set; }
+        public string ImageURL { get; set; }
     }
 }
