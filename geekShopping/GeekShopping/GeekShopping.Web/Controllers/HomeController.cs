@@ -40,7 +40,8 @@ namespace GeekShopping.Web.Controllers {
 
             CartViewModel cart = new() {
                 CartHeader = new CartHeaderViewModel {
-                    UserId = User.Claims.Where(u => u.Type == "sub")?.FirstOrDefault()?.Value
+                    UserId = User.Claims.Where(u => u.Type == "sub")?.FirstOrDefault()?.Value,
+                    CouponCode = "teste para passar!"
                 }
             };
 
@@ -73,6 +74,7 @@ namespace GeekShopping.Web.Controllers {
         [Authorize]
         public async Task<IActionResult> Login() {
             var accessToken = await HttpContext.GetTokenAsync("access_token");
+            Console.WriteLine(accessToken);
             return RedirectToAction(nameof(Index));
         }
 
