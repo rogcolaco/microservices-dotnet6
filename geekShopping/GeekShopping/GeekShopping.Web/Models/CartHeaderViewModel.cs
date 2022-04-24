@@ -10,5 +10,7 @@
 
         public double PurchaseAmount { get; set; }
 
+        public decimal DiscountAmount { get; set; }
+
     }
 }
