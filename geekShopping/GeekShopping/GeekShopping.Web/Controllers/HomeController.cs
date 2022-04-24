@@ -41,6 +41,7 @@ namespace GeekShopping.Web.Controllers {
             CartViewModel cart = new() {
                 CartHeader = new CartHeaderViewModel {
                     UserId = User.Claims.Where(u => u.Type == "sub")?.FirstOrDefault()?.Value,
+                    //Valor mocado apenas para teste
                     CouponCode = "teste para passar!"
                 }
             };
