@@ -28,6 +28,6 @@ namespace GeekShopping.CartAPI.Messages {
 
         public string ExpiryMonthYear { get; set; }
 
-        //public int CartTotalItens { get; set; }
+        public int CartTotalItens { get; set; }
     }
 }

@@ -63,6 +63,7 @@ namespace GeekShopping.CartAPI.Controllers {
             if (cart == null) return NotFound();
             vo.CartDetails = cart.CartDetails;
             vo.CartHeader.DateTime = DateTime.Now;
+            vo.CartHeader.CartTotalItens = vo.CartDetails.Count();
 
             //TASK RabbitMQ logic comes here!!!
 
