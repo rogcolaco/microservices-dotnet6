@@ -9,10 +9,12 @@ namespace GeekShopping.Web.Controllers {
 
         private readonly IProductService _productService;
         private readonly ICartService _cartService;
+        private readonly ICouponService _couponService;
 
-        public CartController(IProductService productService, ICartService cartService) {
+        public CartController(IProductService productService, ICartService cartService, ICouponService couponService) {
             _productService = productService;
             _cartService = cartService;
+            _couponService = couponService;
         }
 
         [Authorize]
@@ -29,6 +31,9 @@ namespace GeekShopping.Web.Controllers {
             var userId = User.Claims.Where(u => u.Type == "sub")?.FirstOrDefault()?.Value;
             var cartResponse = await _cartService.FindCartByUserId(userId, token);
             cartResponse.CartHeader.CouponCode = model.CartHeader.CouponCode;
+            if (string.IsNullOrEmpty(cartResponse.CartHeader.CouponCode)) {
+                return RedirectToAction(nameof(CartIndex));
+            }
             var response = await _cartService.ApplyCoupon(cartResponse, token);
 
             if (response) {
@@ -71,9 +76,16 @@ namespace GeekShopping.Web.Controllers {
             var response = await _cartService.FindCartByUserId(userId, token);
 
             if (response?.CartHeader != null) {
+                if (!string.IsNullOrEmpty(response.CartHeader.CouponCode)) {
+                    var coupon = await _couponService.GetCoupon(response.CartHeader.CouponCode, token);
+                    if (coupon?.CouponCode != null) {
+                        response.CartHeader.DiscountAmount = coupon.DiscountAmount;
+                    }
+                }
                 foreach (var detail in response.CartDetails) {
                     response.CartHeader.PurchaseAmount += (detail.Product.Price * detail.Count);
                 }
+                    response.CartHeader.PurchaseAmount -= response.CartHeader.DiscountAmount;
             }
             return response;
         }
