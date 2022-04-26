@@ -15,7 +15,12 @@ namespace GeekShopping.Web.Services {
         public async Task<CartViewModel> FindCartByUserId(string userId, string token) {
             _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
             var response = await _client.GetAsync($"{BasePath}/find-cart/{userId}");
-            return await response.ReadContentAs<CartViewModel>();
+            if (response.IsSuccessStatusCode) {
+                return await response.ReadContentAs<CartViewModel>();
+            }
+            else {
+                return new CartViewModel();
+            }
         }
 
         public async Task<CartViewModel> AddItemToCart(CartViewModel model, string token) {
