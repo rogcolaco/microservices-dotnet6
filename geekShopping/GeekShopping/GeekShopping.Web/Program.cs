@@ -7,6 +7,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+builder.Services.AddResponseCaching();
+
 //Injeção do HTTP Client ProductAPI
 builder.Services.AddHttpClient<IProductService, ProductService>(httpClient => { httpClient.BaseAddress = new(builder.Configuration["ServiceUrls:ProductAPI"]); });
 //Injeção do HTTP Client CartAPI
@@ -41,7 +43,7 @@ var app = builder.Build();
 if (!app.Environment.IsDevelopment()) {
     app.UseExceptionHandler("/Home/Error");
 }
-
+app.UseResponseCaching();
 //Indicação da aplicação para utilização de HTTPS
 app.UseHttpsRedirection();
 
