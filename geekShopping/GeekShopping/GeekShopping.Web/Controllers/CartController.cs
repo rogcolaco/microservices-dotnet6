@@ -27,7 +27,9 @@ namespace GeekShopping.Web.Controllers {
 
             var token = await HttpContext.GetTokenAsync("access_token");
             var userId = User.Claims.Where(u => u.Type == "sub")?.FirstOrDefault()?.Value;
-            var response = await _cartService.ApplyCoupon(model, token);
+            var cartResponse = await _cartService.FindCartByUserId(userId, token);
+            cartResponse.CartHeader.CouponCode = model.CartHeader.CouponCode;
+            var response = await _cartService.ApplyCoupon(cartResponse, token);
 
             if (response) {
                 return RedirectToAction(nameof(CartIndex));

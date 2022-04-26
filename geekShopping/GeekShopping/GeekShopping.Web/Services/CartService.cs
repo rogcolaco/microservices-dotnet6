@@ -66,7 +66,7 @@ namespace GeekShopping.Web.Services {
 
         public async Task<bool> RemoveCoupon(string userId, string token) {
             _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-            var response = await _client.DeleteAsync($"{BasePath}remove-coupon/{userId}");
+            var response = await _client.DeleteAsync($"{BasePath}/remove-coupon/{userId}");
             if (response.IsSuccessStatusCode) {
                 return await response.ReadContentAs<bool>();
             }

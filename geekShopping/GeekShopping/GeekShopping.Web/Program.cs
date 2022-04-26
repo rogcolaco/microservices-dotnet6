@@ -12,7 +12,7 @@ builder.Services.AddHttpClient<IProductService, ProductService>(httpClient => { 
 //Injeção do HTTP Client CartAPI
 builder.Services.AddHttpClient<ICartService, CartService>(httpClient => { httpClient.BaseAddress = new(builder.Configuration["ServiceUrls:CartAPI"]); });
 //Injeção do HTTP Client CouponAPI
-//builder.Services.AddHttpClient<ICouponService, CouponService>(httpClient => { httpClient.BaseAddress = new(builder.Configuration["ServiceUrls:CouponAPI"]); });
+builder.Services.AddHttpClient<ICouponService, CouponService>(httpClient => { httpClient.BaseAddress = new(builder.Configuration["ServiceUrls:CouponAPI"]); });
 
 //Adiciona autenticacao
 builder.Services.AddAuthentication(options => {

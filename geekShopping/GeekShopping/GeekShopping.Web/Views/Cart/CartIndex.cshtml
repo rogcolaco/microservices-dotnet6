@@ -75,8 +75,15 @@
                         <div class="col-6 text-end">
                             <span class="text-danger" style="font-size:21px;">
                                 Valor Total: @string.Format("{0:c}", Model.CartHeader.PurchaseAmount)
-                                <br />
+                                <br/>
                             </span>
+                            @if(Model.CartHeader.DiscountAmount > 0)
+                            {
+                                <span class="text-success">
+                                    Valor do Desconto: @string.Format("{0:c}", Model.CartHeader.DiscountAmount)
+                                    <br/>
+                                </span>
+                            }
                         </div>
                     </div>
                 </div>
@@ -89,12 +96,11 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </form>
 }
 else {
     <div>
-        <p>Carrinho vazio</p>
+        <h1 class="text-center">Carrinho vazio</h1>
     </div>
 }
