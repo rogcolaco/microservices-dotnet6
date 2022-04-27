@@ -26,7 +26,7 @@ builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 //Configuracao repositorios
 builder.Services.AddScoped<ICartRepository, CartRepository>();
 //Configuracao RabbitMQ
-//builder.Services.AddScoped<IRabbitMQMessageSender, RabbitMQMessageSender>();
+builder.Services.AddScoped<IRabbitMQMessageSender, RabbitMQMessageSender>();
 
 
 builder.Services.AddControllers();

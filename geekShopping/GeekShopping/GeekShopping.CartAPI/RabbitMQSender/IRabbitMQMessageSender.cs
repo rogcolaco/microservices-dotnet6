@@ -1,9 +1,10 @@
-﻿using GeekShopping.MessageBus;
+﻿using GeekShopping.CartAPI.Messages;
+using GeekShopping.MessageBus;
 
 namespace GeekShopping.CartAPI.RabbitMQSender {
     public interface IRabbitMQMessageSender {
 
-        void SendMessage(BaseMessage baseMessage, string quueuName);
+        void SendMessage(CheckoutHeaderVO baseMessage, string quueuName);
 
     }
 }

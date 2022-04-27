@@ -18,31 +18,31 @@ namespace GeekShopping.CartAPI.RabbitMQSender {
             _userName = "guest";
         }
 
-        public void SendMessage(BaseMessage baseMessage, string quueuName) {
-            throw new NotImplementedException();
+        //public void SendMessage(BaseMessage baseMessage, string quueuName) {
+        //    throw new NotImplementedException();
+        //}
+
+        public void SendMessage(CheckoutHeaderVO message, string queuName) {
+            var factory = new ConnectionFactory {
+                HostName = _hostName,
+                UserName = _userName,
+                Password = _password,
+            };
+
+            _connection = factory.CreateConnection();
+            using var channel = _connection.CreateModel();
+            channel.QueueDeclare(queue: queuName, false, false, false, arguments: null);
+            byte[] body = GetMessageAsByteArray(message);
+            channel.BasicPublish(exchange: "", routingKey: queuName, basicProperties: null, body: body);
         }
 
-        //public void SendMessage(BaseMessage message, string queuName) {
-        //    var factory = new ConnectionFactory {
-        //        HostName = _hostName,
-        //        UserName = _userName,
-        //        Password = _password,
-        //    };
-
-        //    _connection = factory.CreateConnection();
-        //    using var channel = _connection.CreateModel();
-        //    channel.QueueDeclare(queue: queuName, false, false, false, arguments: null);
-        //    byte[] body = GetMessageAsByteArray(message);
-        //    channel.BasicPublish(exchange: "", routingKey: queuName, basicProperties: null, body: body);
-        //}
-
-        //private byte[] GetMessageAsByteArray(BaseMessage message) {
-        //    var options = new JsonSerializerOptions {
-        //        WriteIndented = true,
-        //    };
-        //    var json = JsonSerializer.Serialize<CheckoutVO>((CheckoutVO)message, options);
-        //    var body = Encoding.UTF8.GetBytes(json);
-        //    return body;
-        //}
+        private byte[] GetMessageAsByteArray(BaseMessage message) {
+            var options = new JsonSerializerOptions {
+                WriteIndented = true,
+            };
+            var json = JsonSerializer.Serialize<CheckoutHeaderVO>((CheckoutHeaderVO)message, options);
+            var body = Encoding.UTF8.GetBytes(json);
+            return body;
+        }
     }
 }

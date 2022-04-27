@@ -2,6 +2,10 @@
     public class CheckoutViewModel {
         public long Id { get; set; }
 
+        public DateTime DateTime { get; set; }
+
+        public DateTime MessageCreated { get; set; }
+
         public string UserId { get; set; }
 
         public string? CouponCode { get; set; }
@@ -13,8 +17,6 @@
         public string FirstName { get; set; }
 
         public string LastName { get; set; }
-
-        public DateTime DateTime { get; set; }
 
         public string Phone { get; set; }
 
