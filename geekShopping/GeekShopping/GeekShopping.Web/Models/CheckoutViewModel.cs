@@ -1,7 +1,5 @@
-﻿using GeekShopping.CartAPI.Data.ValueObjects;
-
-namespace GeekShopping.CartAPI.Messages {
-    public class CheckoutHeaderVO {
+﻿namespace GeekShopping.Web.Models {
+    public class CheckoutViewModel {
         public long Id { get; set; }
 
         public string UserId { get; set; }
@@ -30,6 +28,6 @@ namespace GeekShopping.CartAPI.Messages {
 
         public int CartTotalItens { get; set; }
 
-        public IEnumerable<CartDetailVO>? CartDetails { get; set; }
+        public IEnumerable<CartDetailViewModel>? CartDetails { get; set; }
     }
 }

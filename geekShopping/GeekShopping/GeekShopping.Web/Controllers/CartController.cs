@@ -80,17 +80,34 @@ namespace GeekShopping.Web.Controllers {
         public async Task<IActionResult> Checkout(CartViewModel model) {
             var token = await HttpContext.GetTokenAsync("access_token");
 
-            //
+            //CartHeaderVO--------------------------
             var userId = User.Claims.Where(u => u.Type == "sub")?.FirstOrDefault()?.Value;
             var cartResponse = await _cartService.FindCartByUserId(userId, token);
-            model.CartDetails = cartResponse.CartDetails;
-            //
-            var response = await _cartService.Checkout(model, token);
+            CheckoutViewModel checkoutViewModel = new CheckoutViewModel {
+                Id = model.CartHeader.Id,
+                UserId = model.CartHeader.UserId,
+                CouponCode = model.CartHeader.CouponCode,
+                PurchaseAmount = model.CartHeader.PurchaseAmount,
+                DiscountAmount = model.CartHeader.DiscountAmount,
+                FirstName = model.CartHeader.FirstName,
+                LastName = model.CartHeader.LastName,
+                DateTime = model.CartHeader.DateTime,
+                Phone = model.CartHeader.Phone,
+                Email = model.CartHeader.Email,
+                CardNumber = model.CartHeader.CardNumber,
+                CVV = model.CartHeader.CVV,
+                ExpiryMonthYear = model.CartHeader.ExpiryMonthYear,
+                CartTotalItens = cartResponse.CartDetails.Count(),
+                CartDetails = cartResponse.CartDetails,
+            };
+            //---------------------------
+
+            var response = await _cartService.Checkout(checkoutViewModel, token);
 
             if (response != null) {
                 return RedirectToAction(nameof(Confirmation));
             }
-            return View(model);
+            return View(checkoutViewModel);
         }
 
         [HttpGet]

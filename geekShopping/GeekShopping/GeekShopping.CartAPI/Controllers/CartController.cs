@@ -58,12 +58,12 @@ namespace GeekShopping.CartAPI.Controllers {
         }
 
         [HttpPost("checkout")]
-        public async Task<ActionResult<CheckoutVO>> Checkout(CheckoutVO vo) {
-            var cart = await _repository.FindCartByUserId(vo.CartHeader.UserId);
+        public async Task<ActionResult<CheckoutHeaderVO>> Checkout(CheckoutHeaderVO vo) {
+            var cart = await _repository.FindCartByUserId(vo.UserId);
             if (cart == null) return NotFound();
             vo.CartDetails = cart.CartDetails;
-            vo.CartHeader.DateTime = DateTime.Now;
-            vo.CartHeader.CartTotalItens = vo.CartDetails.Count();
+            vo.DateTime = DateTime.Now;
+            vo.CartTotalItens = vo.CartDetails.Count();
 
             //TASK RabbitMQ logic comes here!!!
 
